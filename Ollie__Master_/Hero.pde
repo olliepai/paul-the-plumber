@@ -39,7 +39,7 @@ class Hero {
     }
     
     if (xPos + 80 > 1280) {
-      ground.xOffset += 5;
+      environment.xOffset += 5;
       xPos = 1200;
     } else if (xPos < 0) {
       xPos = 0;
