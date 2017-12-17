@@ -10,6 +10,8 @@ float screen;
 
 PImage grave;
 
+int startTime;
+
 
 boolean[] keys = new boolean[1024];
 
@@ -65,6 +67,7 @@ void draw() {
     text("CONTROLS", 385, 635);
     if (mousePressed && mouseX>=350 && mouseX<=940 && mouseY>=350 && mouseY <=450) {
       levels = 2;
+      startTime = millis();
     }
     if (mousePressed && mouseX>=350 && mouseX<=940 && mouseY>=550 && mouseY <650) {
       levels = 1;
@@ -92,12 +95,13 @@ void draw() {
   }
   //game menu
   else if (levels == 2) {
+    
     background(16, 20, 77);
-    environment.graphics();
     environment.generation();
+    environment.graphics();
+    
 
-    paul.graphics();
-    paul.movement();
+    
 
     ai1.graphics();
     ai1.collideHero();
@@ -164,6 +168,9 @@ void draw() {
     c9.collideHero();
     c10.graphics();
     c10.collideHero();
+    
+    paul.graphics();
+    paul.movement();
   } else if (levels == 3) {
     grave = loadImage("grave.jpg");
     grave.resize(1280, 800);

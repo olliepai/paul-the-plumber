@@ -4,8 +4,8 @@ class AI {
   PImage ai;
   boolean visible = true; 
   float speedMultiplier = 1.1;
-  float distanceX = 300;
-  int v = 5;
+  float distanceX;
+  int v;
   int x;
   int y;
 
@@ -16,6 +16,20 @@ class AI {
 
     x = aX;
     y = aY;
+    
+    if (millis() - startTime > 25000) {
+      distanceX = 1280;
+      v = 10;
+    } else if (millis() - startTime > 15000) {
+      distanceX = 800;
+      v = 5;
+    } else if (millis() - startTime > 10000) {
+      distanceX = 500;
+      v = 3;
+    } else {
+      distanceX = 200;
+      v = 2;
+    }
 
   }
 

@@ -4,6 +4,7 @@ class Hero {
   int xPos = 200;
   int yPos = 600;
    int coinCounter = 0;
+   int velocity = 5;
 
   Hero() {
     float gravity = 0.098;
@@ -19,19 +20,19 @@ class Hero {
 
   void movement() {
     if (keyPressed && key == 'd') {
-      xPos += 5;
+      xPos += velocity;
     }
 
     if (keyPressed && key == 'a') {
-      xPos -= 5;
+      xPos -= velocity;
     }
 
     if (keyPressed && key == 'w') {
-      yPos -= 5;
+      yPos -= velocity;
     }
 
     if (keyPressed && key == 's') {
-      yPos += 5;
+      yPos += velocity;
     }
 
     if (yPos < 450) {
