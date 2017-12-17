@@ -4,22 +4,33 @@ class AI {
   PImage ai;
   boolean visible = true; 
   float speedMultiplier = random(2);
-  float distance = random(200);
+  float distanceX = random(200);
+  float distanceY = random(100);
   int v = 5;
   int x;
   int y;
-  public AI(int xpos, int ypos, PImage ai) {
+
+  public AI(int xpos, int ypos) {
     aX = xpos;
     aY = ypos;
     ypos = aY;
-    this.ai = ai;
+
     x = aX;
     y = aY;
+
   }
+
   void graphics() {
     ai = loadImage("Monsters.png");
     ai.resize(80, 60);
-    image(ai, aX, aY);    
+    image(ai, aX, aY);  
+  }
+  
+  void horizontalMotion() {
+    aX += v * speedMultiplier;
+      if (Math.abs(x-aX) > distanceX) {
+        v *= -1;
+      }
   }
   void collideHero() {
     if (visible) {
@@ -27,23 +38,7 @@ class AI {
         paul.health -= 1;
       }
       // pusedocode; if paul has ability enabled and touches an AI
-        // set visible to false
-    }
-  }
-  
-  void horizontalMove() {
-    
-    aX += v * speedMultiplier;
-    if(Math.abs(x-aX) > distance){
-      v *= -1;
-    }
-  }
-  
-    void verticalMove() {
-    
-    aY += v * speedMultiplier;
-    if(Math.abs(y-aY) > distance){
-      v *= -1;
+      // set visible to false
     }
   }
 }
