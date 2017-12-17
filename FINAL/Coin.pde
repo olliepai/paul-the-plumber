@@ -19,7 +19,7 @@ class Coin {
   
   void collideHero() {
     if (visible) {
-      if (paul.xPos+80>cX && paul.xPos < cX+100 && paul.yPos+90 > cY && paul.yPos < cY+100) {
+      if (paul.xPos+80>cX && paul.xPos < cX+50 && paul.yPos+90 > cY && paul.yPos < cY+50) {
         paul.coinCounter += 1;
         visible = false;
       }
