@@ -12,13 +12,12 @@ class Coin {
   void draw() {
     cI = loadImage("coin.png");
     image(cI, cX, cY);
-    ai.resize(100, 100);
+    cI.resize(10, 10);
   }
   void collideHero() {
     if (visible) {
       if (paul.xPos+80>cX && paul.xPos < cX+100 && paul.yPos+90 > cY && paul.yPos < cY+100) {
         paul.coinCounter += 1;
-        visible = false;
       }
     }
   }

@@ -1,4 +1,5 @@
 int levels;
+int coinY;
 Hero paul;
 EnvironmentGenerator environment;
 
@@ -7,12 +8,9 @@ PImage sc;
 float screen;
 PImage ai;
 PImage grave;
+PImage coin;
 AI monster1;
-Coin[] coins = new Coin[500];
-
-boolean[] keys = new boolean[1024];
-
-void setup() {
+Coi"{ oid setup() {
   size(1280, 800);
   levels = 0;
 
@@ -72,8 +70,11 @@ void draw() {
   else if (levels == 2) {
     background(16, 20, 77);
     text("Coins: " + paul.coinCounter, 50,50);
+    coin = loadImage("coin.png");
     for(int i = 0; i < coins.length; i++){
-      
+      coins[i] = new Coin((int)random(1280), (int)random(300)+500, coin);
+      coins[i].draw();
+      coins[i].collideHero();
     }
     environment.graphics();
     environment.generation();
