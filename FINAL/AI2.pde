@@ -1,15 +1,15 @@
-class AI {
+class AI2 {
   int aX;
   int aY;
   PImage ai;
   boolean visible = true; 
-  float speedMultiplier = 1.1;
-  float distanceX = 300;
+  float speedMultiplier = 0.8;
+  float distanceX = 250;
   int v = 5;
   int x;
   int y;
 
-  public AI(int xpos, int ypos) {
+  public AI2(int xpos, int ypos) {
     aX = xpos;
     aY = ypos;
     ypos = aY;
@@ -20,7 +20,7 @@ class AI {
   }
 
   void graphics() {
-    ai = loadImage("Monsters.png");
+    ai = loadImage("Monsters2.png");
     ai.resize(80, 60);
     image(ai, aX, aY);  
   }

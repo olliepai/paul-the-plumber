@@ -1,4 +1,5 @@
 int levels;
+
 Hero paul;
 EnvironmentGenerator environment;
 
@@ -12,16 +13,21 @@ PImage grave;
 
 boolean[] keys = new boolean[1024];
 
-AI ai1 = new AI((int)random(500)- 600, (int)random(300) + 500 - 80);
+AI ai1 = new AI((int)random(500)- 60, (int)random(300) + 500 - 80);
 AI ai2 =  new AI((int)random(1280)- 60 + 1500, (int)random(300) + 500 - 80);
 AI ai3 =  new AI((int)random(1280)-60 + 3000, (int)random(300) + 500 - 80);
 AI ai4 =  new AI((int)random(1280)-60 + 4500, (int)random(300) + 500 - 80);
 AI ai5 =  new AI((int)random(1280)-60 + 6000, (int)random(300) + 500 - 80);
+AI2 ai6 = new AI2((int)random(500)- 60 + 7500, (int)random(300) + 500 - 80);
+AI2 ai7 =  new AI2((int)random(1280)- 60 + 9000, (int)random(300) + 500 - 80);
+AI2 ai8 =  new AI2((int)random(1280)-60 + 10500, (int)random(300) + 500 - 80);
+AI2 ai9 =  new AI2((int)random(1280)-60 + 12000, (int)random(300) + 500 - 80);
+AI2 ai10 =  new AI2((int)random(1280)-60 + 13500, (int)random(300) + 500 - 80);
 Coin c1 = new Coin((int)random(500)- 60 + 1500, (int)random(300) + 500 - 80);
 Coin c2 = new Coin((int)random(500)- 60 + 3000, (int)random(300) + 500 - 80);
 Coin c3 = new Coin((int)random(500)- 60 + 4500, (int)random(300) + 500 - 80);
-Coin c4 = new Coin((int)random(500)- 60 + 600, (int)random(300) + 500 - 80);
-Coin c5 = new Coin((int)random(500)- 600, (int)random(300) + 500 - 80);
+Coin c4 = new Coin((int)random(500)- 60 + 6000, (int)random(300) + 500 - 80);
+Coin c5 = new Coin((int)random(500)- 60 + 7500, (int)random(300) + 500 - 80);
 void setup() {
   size(1280, 800);
   levels = 0;

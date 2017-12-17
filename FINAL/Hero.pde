@@ -37,6 +37,9 @@ class Hero {
     if (yPos < 450) {
       yPos = 450;
     }
+    if(yPos+80 > 800){
+      yPos = 720;
+    }
 
     if (xPos + 80 > 1280) {
       environment.xOffset += 5;
