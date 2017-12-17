@@ -8,6 +8,7 @@ float screen;
 PImage ai;
 PImage grave;
 AI monster1;
+Coin[] coins = new Coin[500];
 
 boolean[] keys = new boolean[1024];
 
@@ -38,6 +39,10 @@ void draw() {
     text("CONTROLS", 385, 635);
     if (mousePressed && mouseX>=350 && mouseX<=940 && mouseY>=350 && mouseY <=450) {
       levels = 2;
+      paul.coinCounter = 0;
+      paul.health = 100;
+      paul.xPos = 200;
+      paul.yPos = 600;
     }
     if (mousePressed && mouseX>=350 && mouseX<=940 && mouseY>=550 && mouseY <650) {
       levels = 1;
@@ -66,6 +71,10 @@ void draw() {
   //game menu
   else if (levels == 2) {
     background(16, 20, 77);
+    text("Coins: " + paul.coinCounter, 50,50);
+    for(int i = 0; i < coins.length; i++){
+      
+    }
     environment.graphics();
     environment.generation();
 
@@ -81,6 +90,14 @@ void draw() {
     grave = loadImage("grave.jpg");
     grave.resize(1280, 800);
     background(grave);
+    fill (255, 255, 255, 160);
+    rect (880, 650, 300, 100);
+    fill (0, 0, 0, 200);
+    textSize(75);
+    text ("BACK", 925, 722);
+    if (mousePressed && mouseX >= 880 && mouseX <= 1080 && mouseY >= 650 && mouseY <= 750) {
+      levels = 0;
+    }
   }
 }
 

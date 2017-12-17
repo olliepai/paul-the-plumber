@@ -3,6 +3,7 @@ class Hero {
   PImage paul;
   int xPos = 200;
   int yPos = 600;
+  int coinCounter = 0;
 
 
   Hero() {
